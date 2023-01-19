@@ -1,0 +1,75 @@
+spring:
+  datasource:
+    username: root
+    password: Li@3188057.
+    url: jdbc:mysql://43.143.58.38:3306/gulimall_pms
+    driver-class-name: com.mysql.cj.jdbc.Driver   #驱动
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 43.143.58.38:8848
+#        namespace: 50eb030d-db7b-48fb-920a-2f45bb4bc938
+    alicloud:
+      access-key: LTAI5tA5wou6mAMqo82tb2sd
+      secret-key: ndwaHyMjSy3doPVRlT5SA1YUKqE6zh
+      oss:
+        endpoint: oss-cn-beijing.aliyuncs.com
+#    alibaba:
+#      seata:
+#        tx-service-group: ${spring.application.name}-tx-group
+  application:
+    name: gulimall-product
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss   #返回的所有日期数据都是按照这种格式进行返回
+  #关闭缓存  实时监听状态
+  thymeleaf:
+    cache: false
+  #redis相关配配置
+  redis:
+    host: 43.143.58.38
+    port: 6379
+    password: Li@3188057.
+  session:
+    store-type: redis
+
+
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto  #设置主键自增
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+
+server:
+  port: 7005
+
+logging:
+  level:
+    com.atguigu.gulimall: info
+
+#seata:
+#  enabled: true
+#  application-id: ${spring.application.name}
+#  # 事务群组（可以每个应用独立取名，也可以使用相同的名字），要与服务端nacos-config.txt中service.vgroup_mapping的后缀对应
+#  tx-service-group: ${spring.application.name}-tx-group
+#  config:
+#    type: nacos
+#    # 需要和server在同一个注册中心下
+#    nacos:
+#      serverAddr: 127.0.0.1:8848
+#      # 需要server端(registry和config)、nacos配置client端(registry和config)保持一致
+#      group: SEATA_GROUP
+#      username: "nacos"
+#      password: "nacos"
+#  registry:
+#    type: nacos
+#    nacos:
+#      # 需要和server端保持一致，即server在nacos中的名称，默认为seata-server
+#      application: seata-server
+#      server-addr: 127.0.0.1:8848
+#      group: SEATA_GROUP
+#      username: "nacos"
+#      password: "nacos"

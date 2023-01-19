@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    alicloud:
+      access-key: LTAI5tA5wou6mAMqo82tb2sd
+      secret-key: ndwaHyMjSy3doPVRlT5SA1YUKqE6zh
+      oss:
+        endpoint: oss-cn-beijing.aliyuncs.com
+        bucket: ld-work
+      sms:
+        host: https://fesms.market.alicloudapi.com
+        path: /sms/
+        skin: 1
+        sign: 1
+        appcode: 91c097449a434adaabe44c1432a58b41
+  application:
+    name: gulimall-third-party
+server:
+  port: 3000
+

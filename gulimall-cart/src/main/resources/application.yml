@@ -1,0 +1,28 @@
+server:
+  port: 30000
+
+spring:
+  application:
+    name: gulimall-cart
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 43.143.58.38:8848
+#        namespace: 50eb030d-db7b-48fb-920a-2f45bb4bc938
+  thymeleaf:
+    cache: false
+  redis:
+    host: 43.143.58.38
+    port: 6379
+    password: Li@3188057.
+  session:
+    store-type: redis
+
+
+
+
+
+
+
+

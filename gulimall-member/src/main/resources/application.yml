@@ -1,0 +1,50 @@
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://192.168.43.2:3306/gulimall_ums
+    driver-class-name: com.mysql.jdbc.Driver   #驱动
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: 50eb030d-db7b-48fb-920a-2f45bb4bc938
+  #    alibaba:
+#      seata:
+#        tx-service-group: ${spring.application.name}-tx-group
+  application:
+    name: gulimall-member
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto  #设置主键自增
+
+server:
+  port: 7002
+
+#seata:
+#  enabled: true
+#  application-id: ${spring.application.name}
+#  # 事务群组（可以每个应用独立取名，也可以使用相同的名字），要与服务端nacos-config.txt中service.vgroup_mapping的后缀对应
+#  tx-service-group: ${spring.application.name}-tx-group
+#  config:
+#    type: nacos
+#    # 需要和server在同一个注册中心下
+#    nacos:
+#      serverAddr: 127.0.0.1:8848
+#      # 需要server端(registry和config)、nacos配置client端(registry和config)保持一致
+#      group: SEATA_GROUP
+#      username: "nacos"
+#      password: "nacos"
+#  registry:
+#    type: nacos
+#    nacos:
+#      # 需要和server端保持一致，即server在nacos中的名称，默认为seata-server
+#      application: seata-server
+#      server-addr: 127.0.0.1:8848
+#      group: SEATA_GROUP
+#      username: "nacos"
+#      password: "nacos"
+
+
